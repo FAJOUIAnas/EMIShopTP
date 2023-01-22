@@ -20,10 +20,10 @@
 
     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active" data-bs-interval="2000">
           <img src="{{product.thumbnail}}" class="d-block w-100" style="height: 400px; max-width: 100%;">
         </div>
-        <div *ngFor="let image of product.images.slice(0, product.images.length - 1);" class="carousel-item">
+        <div *ngFor="let image of product.images.slice(0, product.images.length - 1);" class="carousel-item" data-bs-interval="2000">
           <img src="{{image}}" class="d-block w-100" style="height: 400px; max-width: 100%;">
         </div>
       </div>
