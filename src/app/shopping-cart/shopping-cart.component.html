@@ -1,27 +1,4 @@
-<!-- <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Title</th>
-        <th scope="col">Price</th>
-        <th scope="col">Quantity</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of cart">
-        <th scope="row">{{c.product.id}}</th>
-        <td>{{c.product.title}}</td>
-        <td>{{c.product.price}} DH</td>
-        <td>{{c.quantity}}</td>
-      </tr>
-      <tr >
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td>Total = {{sum}} DH</td>
-      </tr>
-    </tbody>
-  </table> -->
+<bs-navbar></bs-navbar>
 
 <div class="container mt-5 p-3 rounded cart">
   <div class="row no-gutters">
@@ -40,7 +17,7 @@
           <div class="d-flex flex-row"><img class="rounded" src="{{c.product.images[0]}}" width="40">
             <div class="ml-2"><span class="font-weight-bold d-block">{{c.product.title}}</span></div>
           </div>
-          <div class="d-flex flex-row align-items-center"><span class="d-block">{{c.quantity}}</span><span
+          <div class="d-flex flex-row align-items-center"><span class="d-block"><i *ngIf="c.quantity != 1"  style="cursor: pointer;" (click)="deleteP(c.product)" class="bi bi-arrow-down-short"></i>{{c.quantity}}<i style="cursor: pointer;" (click)="add(c.product)" routerLink="/shopping-cart" class="bi bi-arrow-up-short"></i></span><span
               class="d-block ml-5 font-weight-bold">$ {{c.product.price}}</span>
               <button (click)="deleteProductFromCart(c)"><i class="bi bi-trash3"></i></button></div>
         </div>

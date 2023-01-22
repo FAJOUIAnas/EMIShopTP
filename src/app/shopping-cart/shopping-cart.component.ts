@@ -24,6 +24,15 @@ export class ShoppingCartComponent implements OnInit{
     this.getSum();
   }
 
+  add(product: Product) {
+    this.cartService.add(product);
+    this.sum = this.sum + product.price;
+  }
+
+  deleteP(product: Product) {
+    this.cartService.delete(product);
+    this.sum = this.sum - product.price;
+  }
 
   public getProducts(): void {
     this.cart = this.cartService.cart;

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ShoppingCartService } from '../shopping-cart.service';
 import { UserService } from '../user.service';
 import { User } from '../modules/User';
+import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -35,5 +37,26 @@ export class BsNavbarComponent {
     this.access = false;
   }
 
+  logOutNotification(){
+    Swal.fire({
+      title: 'Do you want to Sign out?',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      },
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Yes',
+      denyButtonText: 'Cancel',
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.logout();
+      } else if (result.isDenied) {
+      }
+    })
+  }
 
 }

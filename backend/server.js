@@ -2,7 +2,7 @@ const express = require('express')
 
 const path = require('path');
 const PORT = process.env.PORT || 5000; // si le port est précisé sinon 5000
-const HOST = process.env.Host;
+const HOST = process.env.Host || 'localhost';
 
 const app = express()
 app.use('/', express.static(path.join(__dirname,'angular'))) // __dirname = le path jusqu'à backend

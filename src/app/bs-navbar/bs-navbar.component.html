@@ -19,7 +19,7 @@
                 <a *ngIf="!access" class="nav-link " routerLink="/login">Authentification</a>
                 <a *ngIf="!access" class="nav-link " routerLink="/inscription">Inscription</a>
                 <a *ngIf="access"class="nav-link " >{{currentUser}}</a>
-                <a *ngIf="access" class="nav-link " routerLink="/" (click)="logout()"><i class="bi bi-box-arrow-in-left"></i></a>
+                <a *ngIf="access" class="nav-link " routerLink="/" (click)="logOutNotification()"><i class="bi bi-box-arrow-in-left"></i></a>
             </li>
 
             <!-- <li ngbDropdown class="nav-item dropdown">

@@ -27,6 +27,15 @@ export class ShoppingCartService {
     else {f.quantity = f.quantity + 1;}
   }
 
+  delete(product: Product) {
+    const f = this.cart.find((obj) => {
+      return obj.product.id == product.id;
+    });
+    console.log(f);
+    if(f == null){}
+    else {f.quantity = f.quantity - 1;}
+  }
+
   findByProduct(product: Product): boolean | any {
     this.cart.forEach(element => {
       if (element.product == product) return true;
