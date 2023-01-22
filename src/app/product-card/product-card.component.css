@@ -1,13 +1,29 @@
 .card{
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .card-footer{
-    padding: 0;
+  padding: 0;
 }
 
 .samesize{
-    width: auto;
-    max-height: 150px;
-    height: 150px;
+  width: auto;
+  max-height: 150px;
+  height: 150px;
+}
+
+
+.product-title, .price, .sizes, .colors {
+  text-transform: UPPERCASE;
+  font-weight: bold; }
+
+.checked, .price span {
+  color: #ff9f1a; }
+
+.product-title, .rating, .product-description, .price, .vote, .sizes {
+  margin-bottom: 15px; }
+
+
+.carousel-indicators .active{
+  background-color:#f00;
 }
