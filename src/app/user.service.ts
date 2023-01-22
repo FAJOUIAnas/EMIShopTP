@@ -14,7 +14,7 @@ export class UserService {
 
   users : User[] = [new User('admin', 'admin', 'admin','admin')]
 
-  currentUser! : User;
+  currentUser : string = '';
 
   access : boolean = false
 
@@ -31,7 +31,9 @@ export class UserService {
     this.users.forEach(element => {
       if(element.username == form.value['username'] && element.password ==  form.value['password']){
         this.access = true;
-        this.currentUser = element;
+        this.currentUser = element.name;
+        console.log(this.currentUser);
+        
         this.router.navigateByUrl("/");
         this.successNotification()
       } else {

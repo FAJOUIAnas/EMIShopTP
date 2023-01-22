@@ -11,17 +11,22 @@ import { User } from '../modules/User';
 })
 export class BsNavbarComponent {
 
-  currentUser : User = this.userService.currentUser;
+  
+  
 
   constructor(private cartService: ShoppingCartService,
-    private userService: UserService) { }
+    private userService: UserService) { 
+    }
 
   count: number = this.cartService.count;
 
   access: boolean = this.userService.access;
 
+  currentUser : string = this.userService.currentUser;
+
   getCount() {
     this.cartService.getCount();
+    // console.log(this.userService.currentUser.name);
     return this.cartService.count;
   }
 
