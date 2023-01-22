@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ShoppingCartService } from '../shopping-cart.service';
 import { UserService } from '../user.service';
+import { User } from '../modules/User';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { UserService } from '../user.service';
 })
 export class BsNavbarComponent {
 
+  currentUser : User = this.userService.currentUser;
 
   constructor(private cartService: ShoppingCartService,
     private userService: UserService) { }

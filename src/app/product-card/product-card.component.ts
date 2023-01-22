@@ -3,6 +3,7 @@ import { Product } from '../modules/Product';
 import { ShoppingCartService } from '../shopping-cart.service';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
+import { UserService } from '../user.service';
 
 
 @Component({

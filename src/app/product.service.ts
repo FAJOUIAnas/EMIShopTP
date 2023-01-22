@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Product } from './modules/Product';
-import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { HttpClient } from '@angular/common/http';
 import { ResponseApi } from './modules/ResponseApi';
 
