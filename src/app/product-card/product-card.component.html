@@ -1,13 +1,13 @@
 <div class="card" style="width: 20rem;">
-    <img style="cursor: pointer;" (click)="open(content)" class="card-img-top samesize" src="{{product.images[0]}}" alt="Card image cap">
+    <img style="cursor: pointer;" (click)="open(content)" class="card-img-top samesize" src="{{product.thumbnail}}" alt="Card image cap">
     <div class="card-body">
         <h5 style="cursor: pointer;" (click)="open(content)" class="card-title">{{product.title}}</h5>
-        <p class="card-text">{{product.price | currency:'DH ':true}}</p>
+        <p class="card-text">{{product.price | currency:'$ ':true}}</p>
     </div>
     <div class="card-footer">
         <button
-        (click)="addToCart(product)" 
-        (click)="successNotification()" 
+        (click)="addToCart(product)"
+        (click)="successNotification()"
         class="btn btn-primary btn-block">Add to cart</button>
     </div>
 </div>
@@ -17,13 +17,44 @@
 		<h4 class="modal-title" id="modal-basic-title">{{product.title}}</h4>
 	</div>
 	<div class="modal-body">
-        <img  class="card-img-top" src="{{product.images[0]}}" alt="Card image cap">
-		<p>{{product.description}}</p>
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{product.thumbnail}}" class="d-block w-100" alt="...">
+        </div>
+        <div *ngFor="let image of product.images.slice(0, product.images.length - 2);" class="carousel-item">
+          <img src="{{image}}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="details col-md-6">
+      <h3 class="product-title">{{product.title}}</h3>
+      <p class="product-description">{{product.description}}</p>
+      <h4 class="price">current price: <span>{{product.price}}$</span></h4>
+      <p class="vote">
+        <strong>Rating</strong>
+        {{product.rating}}
+        <strong>(87 votes)</strong>
+      </p>
+      <h5 class="sizes">Brand:
+        <span class="size" data-toggle="tooltip" title="small">{{product.brand}}</span>
+      </h5>
+    </div>
 	</div>
 	<div class="modal-footer">
         <button
-        (click)="addToCart(product)" 
-        (click)="successNotification()" 
+        (click)="addToCart(product)"
+        (click)="successNotification()"
         class="btn btn-outline-dark">Add to cart</button>
 		<button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button>
 	</div>
