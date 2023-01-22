@@ -21,6 +21,10 @@
 		<p>{{product.description}}</p>
 	</div>
 	<div class="modal-footer">
+        <button
+        (click)="addToCart(product)" 
+        (click)="successNotification()" 
+        class="btn btn-outline-dark">Add to cart</button>
 		<button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button>
 	</div>
 </ng-template>
