@@ -45,14 +45,14 @@ export class ProductsComponent {
     console.log(this.pageNbr);
 
 
-    if (this.userService.access) {
+    // if (this.userService.access) {
       this.getProducts();
       this.getCategories();
       console.log(this.pages);
 
-    } else {
-      this.router.navigateByUrl("/login");
-    }
+    // } else {
+    //   this.router.navigateByUrl("/login");
+    // }
   }
 
   getPage(i: number) {

@@ -12,18 +12,21 @@ export class BsNavbarComponent {
 
 
   constructor(private cartService: ShoppingCartService,
-    private userService : UserService){}
+    private userService: UserService) { }
 
-    count : number = this.cartService.count ;
+  count: number = this.cartService.count;
 
-    getCount(){
-      this.cartService.getCount();
-      return this.cartService.count;
-    }
+  access: boolean = this.userService.access;
 
-    logout(){
-      this.userService.access = false;
-    }
+  getCount() {
+    this.cartService.getCount();
+    return this.cartService.count;
+  }
 
-    
+  logout() {
+    this.userService.access = false;
+    this.access = false;
+  }
+
+
 }
